@@ -1,5 +1,5 @@
 <?php
-    $pdo =  new PDO('mysql:dbname=php;host=127.0.0.1;unix_socket=/tmp/mysql.sock','root','secret');
+    $pdo =  new PDO('mysql:dbname=php;host=127.0.0.1;unix_socket=/run/mysqld/mysqld.sock','root','secret');
 
     if(isset($_POST['submit'])){
         $content = $_POST['content_name'];
