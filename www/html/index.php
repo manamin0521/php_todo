@@ -4,7 +4,7 @@
     if(isset($_POST['submit'])){
         $content = $_POST['content'];
 
-        $sql = "INSERT INTO todo VALUES ('$content')";
+        $sql = "INSERT INTO `todo` (`content`) VALUES ('$content')";
         $insert = $pdo->query($sql);
     }
 
