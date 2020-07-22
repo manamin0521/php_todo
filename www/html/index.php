@@ -1,15 +1,15 @@
 <?php
-    $pdo =  new PDO('mysql:dbname=php;host=127.0.0.1;unix_socket=/run/mysqld/mysqld.sock','root','secret');
+    $pdo =  new PDO('mysql:dbname=php;host=db;unix_socket=/run/mysqld/mysqld.sock','root','secret');
 
     if(isset($_POST['submit'])){
-        $content = $_POST['content_name'];
+        $content = $_POST['content'];
 
-        $sql = "INSERT INTO doing (content) VALUES ('$content')";
+        $sql = "INSERT INTO todo VALUES ('$content')";
         $insert = $pdo->query($sql);
     }
 
 
-    $sql = 'SELECT content FROM doing';
+    $sql = 'SELECT content FROM todo';
     $results = $pdo->query($sql);
 ?>
 
@@ -22,7 +22,7 @@
         <h1>ToDoリスト</h1>
         <form action="index.php" method="post">
             <ul>
-                <li><span>やること</span><input type="text" name="content_name">
+                <li><span>やること</span><input type="text" name="content">
                 <span><input type="submit" name="submit"></span></li>
             </ul>
         <ul>
